@@ -19,6 +19,6 @@ model_config:
 
 training_config:
     batch_size: 128
-    n_epochs: 4
+    n_epochs: 8
 
 output_dir: $SCRATCH/hep-cnn-pytorch
