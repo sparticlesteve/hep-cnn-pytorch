@@ -90,11 +90,9 @@ class HEPCNNTrainer(BaseTrainer):
             batch_loss.backward()
             self.optimizer.step()
             sum_loss += batch_loss.item()
-            #self.logger.info('batch loss: %.3f' % batch_loss.item())
         summary['train_time'] = time.time() - start_time
         summary['train_loss'] = sum_loss / (i + 1)
         self.logger.info('  Training loss: %.3f' % summary['train_loss'])
-        #self.logger.info('  Train time: %.3f' % summary['train_time'])
         return summary
 
     def evaluate(self, data_loader):
@@ -120,6 +118,4 @@ class HEPCNNTrainer(BaseTrainer):
         summary['valid_acc'] = sum_correct / len(data_loader.dataset)
         self.logger.info('  Validation loss: %.3f acc: %.3f' %
                          (summary['valid_loss'], summary['valid_acc']))
-        #self.logger.info('  Validation time: %.3f' % summary['valid_time'])
         return summary
-
