@@ -58,6 +58,7 @@ class HEPCNNClassifier(nn.Module):
         return self.dense_net(h).squeeze(-1)
 
 class HEPCNNTrainer(BaseTrainer):
+    """Trainer code for the HEP-CNN classifier."""
 
     def __init__(self, **kwargs):
         super(HEPCNNTrainer, self).__init__(**kwargs)
