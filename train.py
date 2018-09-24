@@ -67,9 +67,11 @@ def main():
 
     # Instantiate the trainer
     model_config = config['model_config']
+    learning_rate = model_config.pop('learning_rate') * dist.get_world_size()
     input_shape = train_dataset.x.size()[1:]
-    trainer = HEPCNNTrainer(output_dir=config['output_dir'])
-    trainer.build_model(input_shape=input_shape, **model_config)
+    trainer = HEPCNNTrainer(output_dir=config['output_dir'], distributed=True)
+    trainer.build_model(input_shape=input_shape, learning_rate=learning_rate,
+                        **model_config)
     if dist.get_rank() == 0:
         trainer.print_model_summary()
 
