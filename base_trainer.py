@@ -9,6 +9,7 @@ import logging
 # Externals
 import numpy as np
 import torch
+import torch.distributed as dist
 
 class BaseTrainer(object):
     """
@@ -51,6 +52,18 @@ class BaseTrainer(object):
         os.makedirs(checkpoint_dir, exist_ok=True)
         torch.save(dict(model=self.model.state_dict()),
                    os.path.join(checkpoint_dir, checkpoint_file))
+
+    def sync_params(self):
+        """Broadcast model params from rank 0 to all ranks"""
+        for param in self.model.parameters():
+            dist.broadcast(param.data, 0)
+
+    def sync_grads(self):
+        """Aggregate gradients from all ranks"""
+        size = float(dist.get_world_size())
+        for param in self.model.parameters():
+            dist.all_reduce(param.grad.data)
+            param.grad.data /= size
 
     def build_model(self):
         """Virtual method to construct the model"""
