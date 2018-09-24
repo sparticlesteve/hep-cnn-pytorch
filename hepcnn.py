@@ -60,8 +60,9 @@ class HEPCNNClassifier(nn.Module):
 class HEPCNNTrainer(BaseTrainer):
     """Trainer code for the HEP-CNN classifier."""
 
-    def __init__(self, **kwargs):
+    def __init__(self, distributed=False, **kwargs):
         super(HEPCNNTrainer, self).__init__(**kwargs)
+        self.distributed = distributed
 
     def build_model(self, input_shape, conv_sizes, dense_sizes, dropout,
                     optimizer='Adam', learning_rate=0.001):
@@ -73,6 +74,8 @@ class HEPCNNTrainer(BaseTrainer):
         opt_type = dict(Adam=torch.optim.Adam)[optimizer]
         self.optimizer = opt_type(self.model.parameters(), lr=learning_rate)
         self.loss_func = torch.nn.BCELoss()
+        if self.distributed:
+            self.sync_params()
 
     def train_epoch(self, data_loader):
         """Train for one epoch"""
@@ -88,6 +91,8 @@ class HEPCNNTrainer(BaseTrainer):
             batch_output = self.model(batch_input)
             batch_loss = self.loss_func(batch_output, batch_target)
             batch_loss.backward()
+            if self.distributed:
+                self.sync_grads()
             self.optimizer.step()
             sum_loss += batch_loss.item()
         self.logger.debug('  Processed %i batches' % (i + 1))
