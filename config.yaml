@@ -1,7 +1,3 @@
-#session_config:
-#    n_inter_threads: 2
-#    n_intra_threads: 32
-
 data_config:
     train_file: /global/cscratch1/sd/sfarrell/atlas-rpv-images/train.h5
     valid_file: /global/cscratch1/sd/sfarrell/atlas-rpv-images/val.h5

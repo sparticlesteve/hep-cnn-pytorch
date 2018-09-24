@@ -70,28 +70,14 @@ class BaseTrainer(object):
         # Loop over epochs
         for i in range(n_epochs):
             self.logger.info('Epoch %i' % i)
-            # Prepare summary information
             summary = dict(epoch=i)
             # Train on this epoch
             summary.update(self.train_epoch(train_data_loader))
             # Evaluate on this epoch
             if valid_data_loader is not None:
                 summary.update(self.evaluate(valid_data_loader))
-            # Save summary information
+            # Save summary, checkpoint
             self.save_summary(summary)
-            # Model checkpointing
             self.write_checkpoint(checkpoint_id=i)
-
-        #self.logger.info('Finished training')
-        #train_samples = len(train_data_loader.dataset)
-        #train_time = np.mean(self.summaries['train_time'])
-        #self.logger.info('Train rate: %g samples/s' % (train_samples / train_time))
-        #valid_samples = len(valid_data_loader.dataset)
-        #valid_time = np.mean(self.summaries['valid_time'])
-        #self.logger.info('Valid rate: %g samples/s' % (valid_samples / valid_time))
-
-        # Save the combined summary information
-        #if self.output_dir is not None:
-        #    self.write_summaries()
 
         return self.summaries
