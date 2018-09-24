@@ -13,6 +13,7 @@ import logging
 # Externals
 import numpy as np
 import yaml
+import torch.distributed as dist
 from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
 
@@ -42,10 +43,15 @@ def main():
     if args.show_config:
         logging.info('Command line config: %s' % args)
 
+    # Initialize MPI
+    dist.init_process_group(backend='mpi')
+    logging.info('MPI rank %i' % dist.get_rank())
+
     # Load configuration file
     with open(args.config) as f:
         config = yaml.load(f)
-    logging.info('Configuration: %s' % config)
+    if dist.get_rank() == 0:
+        logging.info('Configuration: %s' % config)
 
     # Load the data
     data_config = config['data_config']
@@ -64,13 +70,15 @@ def main():
     input_shape = train_dataset.x.size()[1:]
     trainer = HEPCNNTrainer(output_dir=config['output_dir'])
     trainer.build_model(input_shape=input_shape, **model_config)
-    trainer.print_model_summary()
+    if dist.get_rank() == 0:
+        trainer.print_model_summary()
 
     # Run the training
     summary = trainer.train(train_data_loader=train_data_loader,
                             valid_data_loader=valid_data_loader,
                             **train_config)
-    trainer.write_summaries()
+    if dist.get_rank() == 0:
+        trainer.write_summaries()
 
     # Print some conclusions
     n_train_samples = len(train_data_loader.sampler)
