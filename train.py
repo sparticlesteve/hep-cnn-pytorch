@@ -14,6 +14,7 @@ import logging
 import numpy as np
 import yaml
 from torch.utils.data import DataLoader
+from torch.utils.data.distributed import DistributedSampler
 
 # Locals
 from data import HEPDataset
@@ -52,7 +53,9 @@ def main():
     batch_size = train_config.pop('batch_size')
     train_dataset = HEPDataset(data_config['train_file'], n_samples=data_config['n_train'])
     valid_dataset = HEPDataset(data_config['valid_file'], n_samples=data_config['n_valid'])
-    train_data_loader = DataLoader(train_dataset, batch_size=batch_size)
+    train_sampler = DistributedSampler(train_dataset)
+    train_data_loader = DataLoader(train_dataset, batch_size=batch_size,
+                                   sampler=train_sampler)
     valid_data_loader = DataLoader(valid_dataset, batch_size=batch_size)
     logging.info('Loaded data with shape: %s' % str(train_dataset.x.size()))
 
