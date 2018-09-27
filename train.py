@@ -15,6 +15,7 @@ import numpy as np
 import yaml
 from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
+import horovod.torch as hvd
 
 # Locals
 from data import HEPDataset
@@ -42,10 +43,15 @@ def main():
     if args.show_config:
         logging.info('Command line config: %s' % args)
 
+    # Initialize horovod and MPI
+    hvd.init()
+    logging.info('MPI rank %i' % hvd.rank())
+
     # Load configuration file
     with open(args.config) as f:
         config = yaml.load(f)
-    logging.info('Configuration: %s' % config)
+    if hvd.rank() == 0:
+        logging.info('Configuration: %s' % config)
 
     # Load the data
     data_config = config['data_config']
@@ -53,7 +59,9 @@ def main():
     batch_size = train_config.pop('batch_size')
     train_dataset = HEPDataset(data_config['train_file'], n_samples=data_config['n_train'])
     valid_dataset = HEPDataset(data_config['valid_file'], n_samples=data_config['n_valid'])
-    train_sampler = DistributedSampler(train_dataset)
+    train_sampler = DistributedSampler(train_dataset,
+                                       num_replicas=hvd.size(),
+                                       rank=hvd.rank())
     train_data_loader = DataLoader(train_dataset, batch_size=batch_size,
                                    sampler=train_sampler)
     valid_data_loader = DataLoader(valid_dataset, batch_size=batch_size)
@@ -61,16 +69,20 @@ def main():
 
     # Instantiate the trainer
     model_config = config['model_config']
+    learning_rate = model_config.pop('learning_rate') * hvd.size()
     input_shape = train_dataset.x.size()[1:]
-    trainer = HEPCNNTrainer(output_dir=config['output_dir'])
-    trainer.build_model(input_shape=input_shape, **model_config)
-    trainer.print_model_summary()
+    trainer = HEPCNNTrainer(output_dir=config['output_dir'], distributed=True)
+    trainer.build_model(input_shape=input_shape, learning_rate=learning_rate,
+                        **model_config)
+    if hvd.rank() == 0:
+        trainer.print_model_summary()
 
     # Run the training
     summary = trainer.train(train_data_loader=train_data_loader,
                             valid_data_loader=valid_data_loader,
                             **train_config)
-    trainer.write_summaries()
+    if hvd.rank() == 0:
+        trainer.write_summaries()
 
     # Print some conclusions
     n_train_samples = len(train_data_loader.sampler)

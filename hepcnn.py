@@ -14,6 +14,7 @@ import time
 # Externals
 import torch
 import torch.nn as nn
+import horovod.torch as hvd
 
 # Locals
 from base_trainer import BaseTrainer
@@ -60,8 +61,9 @@ class HEPCNNClassifier(nn.Module):
 class HEPCNNTrainer(BaseTrainer):
     """Trainer code for the HEP-CNN classifier."""
 
-    def __init__(self, **kwargs):
+    def __init__(self, distributed=False, **kwargs):
         super(HEPCNNTrainer, self).__init__(**kwargs)
+        self.distributed = distributed
 
     def build_model(self, input_shape, conv_sizes, dense_sizes, dropout,
                     optimizer='Adam', learning_rate=0.001):
@@ -70,9 +72,15 @@ class HEPCNNTrainer(BaseTrainer):
                                       conv_sizes=conv_sizes,
                                       dense_sizes=dense_sizes,
                                       dropout=dropout).to(self.device)
-        opt_type = dict(Adam=torch.optim.Adam)[optimizer]
-        self.optimizer = opt_type(self.model.parameters(), lr=learning_rate)
         self.loss_func = torch.nn.BCELoss()
+        opt_type = dict(Adam=torch.optim.Adam)[optimizer]
+        if self.distributed:
+            self.optimizer = hvd.DistributedOptimizer(
+                opt_type(self.model.parameters(), lr=learning_rate),
+                named_parameters=self.model.named_parameters())
+            hvd.broadcast_parameters(self.model.state_dict(), root_rank=0)
+        else:
+            self.optimizer = opt_type(self.model.parameters(), lr=learning_rate)
 
     def train_epoch(self, data_loader):
         """Train for one epoch"""
