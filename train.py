@@ -70,11 +70,14 @@ def main():
     trainer.write_summaries()
 
     # Print some conclusions
+    n_train_samples = len(train_data_loader.sampler)
+    n_valid_samples = len(valid_data_loader.sampler)
     logging.info('Finished training')
     train_time = np.mean(summary['train_time'])
-    logging.info('Train rate: %g samples/s' % (data_config['n_train'] / train_time))
+    logging.info('Train samples %g time %gs rate %g samples/s' % (
+        n_train_samples, train_time, n_train_samples / train_time))
     valid_time = np.mean(summary['valid_time'])
-    logging.info('Valid rate: %g samples/s' % (data_config['n_valid'] / valid_time))
+    logging.info('Valid rate: %g samples/s' % (n_valid_samples / valid_time))
 
     # Drop to IPython interactive shell
     if args.interactive:

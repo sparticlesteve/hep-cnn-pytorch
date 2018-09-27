@@ -115,7 +115,7 @@ class HEPCNNTrainer(BaseTrainer):
                 sum_correct += preds.eq(labels).sum().item()
         summary['valid_time'] = time.time() - start_time
         summary['valid_loss'] = sum_loss / (i + 1)
-        summary['valid_acc'] = sum_correct / len(data_loader.dataset)
+        summary['valid_acc'] = sum_correct / len(data_loader.sampler)
         self.logger.info('  Validation loss: %.3f acc: %.3f' %
                          (summary['valid_loss'], summary['valid_acc']))
         return summary
