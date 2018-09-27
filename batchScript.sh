@@ -4,4 +4,4 @@
 #SBATCH -t 30
 
 . setup.sh
-python ./train.py
+srun -l python ./train.py
