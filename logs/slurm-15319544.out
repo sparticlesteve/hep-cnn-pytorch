@@ -1,0 +1,273 @@
+*** WARNING: This is an experimental installation of pytorch built specifically for MPI / distributed running ***
+7: 2018-09-28 11:45:25,420 INFO Initializing
+6: 2018-09-28 11:45:25,634 INFO Initializing
+0: 2018-09-28 11:45:25,729 INFO Initializing
+2: 2018-09-28 11:45:25,800 INFO Initializing
+5: 2018-09-28 11:45:25,845 INFO Initializing
+3: 2018-09-28 11:45:25,967 INFO Initializing
+1: 2018-09-28 11:45:26,186 INFO Initializing
+4: 2018-09-28 11:45:27,653 INFO Initializing
+0: 2018-09-28 11:45:27,707 INFO MPI rank 0
+2: 2018-09-28 11:45:27,707 INFO MPI rank 2
+4: 2018-09-28 11:45:27,708 INFO MPI rank 4
+3: 2018-09-28 11:45:27,708 INFO MPI rank 3
+6: 2018-09-28 11:45:27,706 INFO MPI rank 6
+5: 2018-09-28 11:45:27,708 INFO MPI rank 5
+1: 2018-09-28 11:45:27,705 INFO MPI rank 1
+7: 2018-09-28 11:45:27,706 INFO MPI rank 7
+0: 2018-09-28 11:45:27,716 INFO Configuration: {'data_config': {'train_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/train.h5', 'valid_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/val.h5', 'test_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/test.h5', 'n_train': 65536, 'n_valid': 32768, 'n_test': 1024}, 'model_config': {'conv_sizes': [16, 32, 64], 'dense_sizes': [128], 'optimizer': 'Adam', 'learning_rate': 0.001, 'dropout': 0.2}, 'training_config': {'batch_size': 128, 'n_epochs': 8}, 'output_dir': '$SCRATCH/hep-cnn-pytorch'}
+6: 2018-09-28 11:46:02,450 INFO Loaded data with shape: torch.Size([65536, 1, 64, 64])
+1: 2018-09-28 11:46:02,450 INFO Loaded data with shape: torch.Size([65536, 1, 64, 64])
+5: 2018-09-28 11:46:02,454 INFO Loaded data with shape: torch.Size([65536, 1, 64, 64])
+3: 2018-09-28 11:46:02,454 INFO Loaded data with shape: torch.Size([65536, 1, 64, 64])
+2: 2018-09-28 11:46:02,453 INFO Loaded data with shape: torch.Size([65536, 1, 64, 64])
+4: 2018-09-28 11:46:02,457 INFO Loaded data with shape: torch.Size([65536, 1, 64, 64])
+0: 2018-09-28 11:46:02,457 INFO Loaded data with shape: torch.Size([65536, 1, 64, 64])
+7: 2018-09-28 11:46:02,677 INFO Loaded data with shape: torch.Size([65536, 1, 64, 64])
+1: 2018-09-28 11:46:02,692 INFO Epoch 0
+3: 2018-09-28 11:46:02,695 INFO Epoch 0
+2: 2018-09-28 11:46:02,694 INFO Epoch 0
+0: 2018-09-28 11:46:02,694 INFO Model: 
+0: HEPCNNClassifier(
+0:   (conv_net): Sequential(
+0:     (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+0:     (1): ReLU()
+0:     (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+0:     (3): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+0:     (4): ReLU()
+0:     (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+0:     (6): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+0:     (7): ReLU()
+0:     (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+0:   )
+0:   (dense_net): Sequential(
+0:     (0): Linear(in_features=4096, out_features=128, bias=True)
+0:     (1): ReLU()
+0:     (2): Dropout(p=0.2)
+0:     (3): Linear(in_features=128, out_features=1, bias=True)
+0:     (4): Sigmoid()
+0:   )
+0: )
+0: Parameters: 547841
+0: 2018-09-28 11:46:02,694 INFO Epoch 0
+4: 2018-09-28 11:46:02,702 INFO Epoch 0
+5: 2018-09-28 11:46:02,703 INFO Epoch 0
+7: 2018-09-28 11:46:02,701 INFO Epoch 0
+6: 2018-09-28 11:46:02,701 INFO Epoch 0
+0: 2018-09-28 11:46:12,940 INFO   Training loss: 0.436
+4: 2018-09-28 11:46:12,941 INFO   Training loss: 0.433
+5: 2018-09-28 11:46:12,942 INFO   Training loss: 0.444
+1: 2018-09-28 11:46:12,939 INFO   Training loss: 0.435
+7: 2018-09-28 11:46:12,940 INFO   Training loss: 0.433
+3: 2018-09-28 11:46:12,942 INFO   Training loss: 0.435
+6: 2018-09-28 11:46:12,940 INFO   Training loss: 0.429
+2: 2018-09-28 11:46:12,941 INFO   Training loss: 0.438
+0: 2018-09-28 11:46:23,448 INFO   Validation loss: 0.243 acc: 0.902
+0: 2018-09-28 11:46:23,455 INFO Epoch 1
+2: 2018-09-28 11:46:23,465 INFO   Validation loss: 0.243 acc: 0.902
+1: 2018-09-28 11:46:23,486 INFO   Validation loss: 0.243 acc: 0.902
+7: 2018-09-28 11:46:23,510 INFO   Validation loss: 0.243 acc: 0.902
+5: 2018-09-28 11:46:23,545 INFO   Validation loss: 0.243 acc: 0.902
+3: 2018-09-28 11:46:23,606 INFO   Validation loss: 0.243 acc: 0.902
+2: 2018-09-28 11:46:23,787 INFO Epoch 1
+5: 2018-09-28 11:46:24,158 INFO Epoch 1
+1: 2018-09-28 11:46:25,238 INFO Epoch 1
+7: 2018-09-28 11:46:25,263 INFO Epoch 1
+3: 2018-09-28 11:46:25,286 INFO Epoch 1
+6: 2018-09-28 11:46:27,783 INFO   Validation loss: 0.243 acc: 0.902
+6: 2018-09-28 11:46:27,841 INFO Epoch 1
+4: 2018-09-28 11:46:29,946 INFO   Validation loss: 0.243 acc: 0.902
+4: 2018-09-28 11:46:30,029 INFO Epoch 1
+4: 2018-09-28 11:46:39,923 INFO   Training loss: 0.241
+1: 2018-09-28 11:46:39,920 INFO   Training loss: 0.247
+7: 2018-09-28 11:46:39,921 INFO   Training loss: 0.249
+6: 2018-09-28 11:46:39,921 INFO   Training loss: 0.240
+5: 2018-09-28 11:46:39,923 INFO   Training loss: 0.255
+3: 2018-09-28 11:46:39,923 INFO   Training loss: 0.254
+2: 2018-09-28 11:46:39,923 INFO   Training loss: 0.242
+0: 2018-09-28 11:46:39,922 INFO   Training loss: 0.246
+2: 2018-09-28 11:46:50,383 INFO   Validation loss: 0.233 acc: 0.906
+2: 2018-09-28 11:46:50,391 INFO Epoch 2
+7: 2018-09-28 11:46:50,439 INFO   Validation loss: 0.233 acc: 0.906
+0: 2018-09-28 11:46:50,488 INFO   Validation loss: 0.233 acc: 0.906
+5: 2018-09-28 11:46:50,523 INFO   Validation loss: 0.233 acc: 0.906
+1: 2018-09-28 11:46:50,524 INFO   Validation loss: 0.233 acc: 0.906
+3: 2018-09-28 11:46:50,573 INFO   Validation loss: 0.233 acc: 0.906
+0: 2018-09-28 11:46:50,660 INFO Epoch 2
+5: 2018-09-28 11:46:51,219 INFO Epoch 2
+7: 2018-09-28 11:46:52,334 INFO Epoch 2
+1: 2018-09-28 11:46:52,333 INFO Epoch 2
+3: 2018-09-28 11:46:52,336 INFO Epoch 2
+6: 2018-09-28 11:46:55,438 INFO   Validation loss: 0.233 acc: 0.906
+6: 2018-09-28 11:46:55,483 INFO Epoch 2
+4: 2018-09-28 11:46:56,498 INFO   Validation loss: 0.233 acc: 0.906
+4: 2018-09-28 11:46:56,609 INFO Epoch 2
+0: 2018-09-28 11:47:06,419 INFO   Training loss: 0.235
+1: 2018-09-28 11:47:06,417 INFO   Training loss: 0.238
+3: 2018-09-28 11:47:06,420 INFO   Training loss: 0.243
+4: 2018-09-28 11:47:06,420 INFO   Training loss: 0.231
+6: 2018-09-28 11:47:06,418 INFO   Training loss: 0.231
+5: 2018-09-28 11:47:06,421 INFO   Training loss: 0.240
+7: 2018-09-28 11:47:06,419 INFO   Training loss: 0.241
+2: 2018-09-28 11:47:06,420 INFO   Training loss: 0.234
+2: 2018-09-28 11:47:16,886 INFO   Validation loss: 0.230 acc: 0.907
+2: 2018-09-28 11:47:16,896 INFO Epoch 3
+7: 2018-09-28 11:47:16,929 INFO   Validation loss: 0.230 acc: 0.907
+0: 2018-09-28 11:47:16,966 INFO   Validation loss: 0.230 acc: 0.907
+5: 2018-09-28 11:47:16,979 INFO   Validation loss: 0.230 acc: 0.907
+1: 2018-09-28 11:47:17,025 INFO   Validation loss: 0.230 acc: 0.907
+3: 2018-09-28 11:47:17,032 INFO   Validation loss: 0.230 acc: 0.907
+5: 2018-09-28 11:47:17,413 INFO Epoch 3
+7: 2018-09-28 11:47:18,103 INFO Epoch 3
+0: 2018-09-28 11:47:18,298 INFO Epoch 3
+1: 2018-09-28 11:47:18,877 INFO Epoch 3
+3: 2018-09-28 11:47:18,903 INFO Epoch 3
+6: 2018-09-28 11:47:21,991 INFO   Validation loss: 0.230 acc: 0.907
+6: 2018-09-28 11:47:22,039 INFO Epoch 3
+4: 2018-09-28 11:47:26,036 INFO   Validation loss: 0.230 acc: 0.907
+4: 2018-09-28 11:47:26,163 INFO Epoch 3
+4: 2018-09-28 11:47:35,906 INFO   Training loss: 0.229
+1: 2018-09-28 11:47:35,903 INFO   Training loss: 0.235
+6: 2018-09-28 11:47:35,904 INFO   Training loss: 0.229
+7: 2018-09-28 11:47:35,904 INFO   Training loss: 0.237
+3: 2018-09-28 11:47:35,906 INFO   Training loss: 0.242
+5: 2018-09-28 11:47:35,907 INFO   Training loss: 0.238
+0: 2018-09-28 11:47:35,905 INFO   Training loss: 0.233
+2: 2018-09-28 11:47:35,906 INFO   Training loss: 0.231
+2: 2018-09-28 11:47:46,388 INFO   Validation loss: 0.231 acc: 0.907
+7: 2018-09-28 11:47:46,412 INFO   Validation loss: 0.231 acc: 0.907
+4: 2018-09-28 11:47:46,423 INFO   Validation loss: 0.231 acc: 0.907
+5: 2018-09-28 11:47:46,426 INFO   Validation loss: 0.231 acc: 0.907
+0: 2018-09-28 11:47:46,499 INFO   Validation loss: 0.231 acc: 0.907
+1: 2018-09-28 11:47:46,521 INFO   Validation loss: 0.231 acc: 0.907
+3: 2018-09-28 11:47:46,534 INFO   Validation loss: 0.231 acc: 0.907
+7: 2018-09-28 11:47:50,161 INFO Epoch 4
+2: 2018-09-28 11:47:50,340 INFO Epoch 4
+5: 2018-09-28 11:47:50,374 INFO Epoch 4
+0: 2018-09-28 11:47:50,403 INFO Epoch 4
+4: 2018-09-28 11:47:50,430 INFO Epoch 4
+1: 2018-09-28 11:47:50,460 INFO Epoch 4
+3: 2018-09-28 11:47:50,488 INFO Epoch 4
+6: 2018-09-28 11:47:51,491 INFO   Validation loss: 0.231 acc: 0.907
+6: 2018-09-28 11:47:51,556 INFO Epoch 4
+1: 2018-09-28 11:48:01,291 INFO   Training loss: 0.235
+7: 2018-09-28 11:48:01,292 INFO   Training loss: 0.236
+4: 2018-09-28 11:48:01,294 INFO   Training loss: 0.229
+5: 2018-09-28 11:48:01,294 INFO   Training loss: 0.240
+0: 2018-09-28 11:48:01,292 INFO   Training loss: 0.236
+3: 2018-09-28 11:48:01,294 INFO   Training loss: 0.241
+6: 2018-09-28 11:48:01,292 INFO   Training loss: 0.230
+2: 2018-09-28 11:48:01,293 INFO   Training loss: 0.229
+2: 2018-09-28 11:48:11,781 INFO   Validation loss: 0.227 acc: 0.908
+2: 2018-09-28 11:48:11,788 INFO Epoch 5
+4: 2018-09-28 11:48:11,802 INFO   Validation loss: 0.227 acc: 0.908
+7: 2018-09-28 11:48:11,827 INFO   Validation loss: 0.227 acc: 0.908
+5: 2018-09-28 11:48:11,891 INFO   Validation loss: 0.227 acc: 0.908
+3: 2018-09-28 11:48:11,910 INFO   Validation loss: 0.227 acc: 0.908
+1: 2018-09-28 11:48:11,919 INFO   Validation loss: 0.227 acc: 0.908
+0: 2018-09-28 11:48:12,023 INFO   Validation loss: 0.227 acc: 0.908
+4: 2018-09-28 11:48:12,111 INFO Epoch 5
+5: 2018-09-28 11:48:12,488 INFO Epoch 5
+7: 2018-09-28 11:48:14,322 INFO Epoch 5
+3: 2018-09-28 11:48:14,460 INFO Epoch 5
+0: 2018-09-28 11:48:14,492 INFO Epoch 5
+1: 2018-09-28 11:48:14,521 INFO Epoch 5
+6: 2018-09-28 11:48:16,931 INFO   Validation loss: 0.227 acc: 0.908
+6: 2018-09-28 11:48:17,012 INFO Epoch 5
+3: 2018-09-28 11:48:26,624 INFO   Training loss: 0.237
+4: 2018-09-28 11:48:26,624 INFO   Training loss: 0.225
+5: 2018-09-28 11:48:26,625 INFO   Training loss: 0.234
+0: 2018-09-28 11:48:26,623 INFO   Training loss: 0.228
+7: 2018-09-28 11:48:26,623 INFO   Training loss: 0.236
+6: 2018-09-28 11:48:26,622 INFO   Training loss: 0.224
+2: 2018-09-28 11:48:26,624 INFO   Training loss: 0.225
+1: 2018-09-28 11:48:26,622 INFO   Training loss: 0.231
+4: 2018-09-28 11:48:37,277 INFO   Validation loss: 0.212 acc: 0.913
+2: 2018-09-28 11:48:37,277 INFO   Validation loss: 0.212 acc: 0.913
+7: 2018-09-28 11:48:37,276 INFO   Validation loss: 0.212 acc: 0.913
+5: 2018-09-28 11:48:37,353 INFO   Validation loss: 0.212 acc: 0.913
+3: 2018-09-28 11:48:37,363 INFO   Validation loss: 0.212 acc: 0.913
+1: 2018-09-28 11:48:37,370 INFO   Validation loss: 0.212 acc: 0.913
+0: 2018-09-28 11:48:37,384 INFO   Validation loss: 0.212 acc: 0.913
+4: 2018-09-28 11:48:38,058 INFO Epoch 6
+2: 2018-09-28 11:48:39,903 INFO Epoch 6
+5: 2018-09-28 11:48:40,163 INFO Epoch 6
+7: 2018-09-28 11:48:40,508 INFO Epoch 6
+3: 2018-09-28 11:48:40,604 INFO Epoch 6
+0: 2018-09-28 11:48:40,626 INFO Epoch 6
+1: 2018-09-28 11:48:40,651 INFO Epoch 6
+6: 2018-09-28 11:48:42,371 INFO   Validation loss: 0.212 acc: 0.913
+6: 2018-09-28 11:48:42,402 INFO Epoch 6
+4: 2018-09-28 11:48:51,992 INFO   Training loss: 0.226
+7: 2018-09-28 11:48:51,990 INFO   Training loss: 0.236
+6: 2018-09-28 11:48:51,990 INFO   Training loss: 0.226
+0: 2018-09-28 11:48:51,991 INFO   Training loss: 0.231
+5: 2018-09-28 11:48:51,992 INFO   Training loss: 0.236
+1: 2018-09-28 11:48:51,989 INFO   Training loss: 0.232
+3: 2018-09-28 11:48:51,992 INFO   Training loss: 0.237
+2: 2018-09-28 11:48:51,992 INFO   Training loss: 0.227
+7: 2018-09-28 11:49:02,492 INFO   Validation loss: 0.226 acc: 0.908
+7: 2018-09-28 11:49:02,500 INFO Epoch 7
+2: 2018-09-28 11:49:02,503 INFO   Validation loss: 0.226 acc: 0.908
+4: 2018-09-28 11:49:02,507 INFO   Validation loss: 0.226 acc: 0.908
+3: 2018-09-28 11:49:02,552 INFO   Validation loss: 0.226 acc: 0.908
+5: 2018-09-28 11:49:02,556 INFO   Validation loss: 0.226 acc: 0.908
+1: 2018-09-28 11:49:02,594 INFO   Validation loss: 0.226 acc: 0.908
+0: 2018-09-28 11:49:02,686 INFO   Validation loss: 0.226 acc: 0.908
+2: 2018-09-28 11:49:05,434 INFO Epoch 7
+5: 2018-09-28 11:49:05,476 INFO Epoch 7
+4: 2018-09-28 11:49:05,491 INFO Epoch 7
+3: 2018-09-28 11:49:05,576 INFO Epoch 7
+0: 2018-09-28 11:49:05,629 INFO Epoch 7
+1: 2018-09-28 11:49:05,658 INFO Epoch 7
+6: 2018-09-28 11:49:07,527 INFO   Validation loss: 0.226 acc: 0.908
+6: 2018-09-28 11:49:07,610 INFO Epoch 7
+4: 2018-09-28 11:49:17,245 INFO   Training loss: 0.214
+1: 2018-09-28 11:49:17,242 INFO   Training loss: 0.221
+7: 2018-09-28 11:49:17,243 INFO   Training loss: 0.224
+3: 2018-09-28 11:49:17,245 INFO   Training loss: 0.225
+6: 2018-09-28 11:49:17,243 INFO   Training loss: 0.215
+5: 2018-09-28 11:49:17,245 INFO   Training loss: 0.222
+0: 2018-09-28 11:49:17,244 INFO   Training loss: 0.219
+2: 2018-09-28 11:49:17,244 INFO   Training loss: 0.216
+2: 2018-09-28 11:49:27,802 INFO   Validation loss: 0.192 acc: 0.919
+2: 2018-09-28 11:49:27,809 INFO Finished training
+2: 2018-09-28 11:49:27,810 INFO Train samples 8192 time 13.8882s rate 589.853 samples/s
+2: 2018-09-28 11:49:27,810 INFO Valid rate: 3115.54 samples/s
+2: 2018-09-28 11:49:27,810 INFO All done!
+4: 2018-09-28 11:49:27,811 INFO   Validation loss: 0.192 acc: 0.919
+7: 2018-09-28 11:49:27,830 INFO   Validation loss: 0.192 acc: 0.919
+0: 2018-09-28 11:49:27,913 INFO   Validation loss: 0.192 acc: 0.919
+3: 2018-09-28 11:49:27,921 INFO   Validation loss: 0.192 acc: 0.919
+1: 2018-09-28 11:49:27,921 INFO   Validation loss: 0.192 acc: 0.919
+7: 2018-09-28 11:49:27,983 INFO Finished training
+7: 2018-09-28 11:49:27,984 INFO Train samples 8192 time 13.3046s rate 615.726 samples/s
+7: 2018-09-28 11:49:27,984 INFO Valid rate: 3106.72 samples/s
+7: 2018-09-28 11:49:27,984 INFO All done!
+4: 2018-09-28 11:49:28,369 INFO Finished training
+4: 2018-09-28 11:49:28,369 INFO Train samples 8192 time 11.3438s rate 722.157 samples/s
+4: 2018-09-28 11:49:28,369 INFO Valid rate: 2474.22 samples/s
+4: 2018-09-28 11:49:28,369 INFO All done!
+0: 2018-09-28 11:49:29,868 INFO Saving summaries to /global/cscratch1/sd/sfarrell/hep-cnn-pytorch/summaries.npz
+0: 2018-09-28 11:49:29,883 INFO Finished training
+0: 2018-09-28 11:49:29,883 INFO Train samples 8192 time 13.2598s rate 617.808 samples/s
+0: 2018-09-28 11:49:29,883 INFO Valid rate: 3081.61 samples/s
+0: 2018-09-28 11:49:29,883 INFO All done!
+3: 2018-09-28 11:49:29,937 INFO Finished training
+3: 2018-09-28 11:49:29,937 INFO Train samples 8192 time 12.7495s rate 642.534 samples/s
+3: 2018-09-28 11:49:29,937 INFO Valid rate: 3079.07 samples/s
+3: 2018-09-28 11:49:29,937 INFO All done!
+1: 2018-09-28 11:49:29,958 INFO Finished training
+1: 2018-09-28 11:49:29,958 INFO Train samples 8192 time 12.7365s rate 643.191 samples/s
+1: 2018-09-28 11:49:29,958 INFO Valid rate: 3082.76 samples/s
+1: 2018-09-28 11:49:29,958 INFO All done!
+5: 2018-09-28 11:49:32,810 INFO   Validation loss: 0.192 acc: 0.919
+6: 2018-09-28 11:49:32,812 INFO   Validation loss: 0.192 acc: 0.919
+6: 2018-09-28 11:49:33,162 INFO Finished training
+6: 2018-09-28 11:49:33,162 INFO Train samples 8192 time 10.7107s rate 764.841 samples/s
+6: 2018-09-28 11:49:33,162 INFO Valid rate: 2113.85 samples/s
+6: 2018-09-28 11:49:33,162 INFO All done!
+5: 2018-09-28 11:49:33,265 INFO Finished training
+5: 2018-09-28 11:49:33,265 INFO Train samples 8192 time 13.5444s rate 604.827 samples/s
+5: 2018-09-28 11:49:33,265 INFO Valid rate: 2921.43 samples/s
+5: 2018-09-28 11:49:33,265 INFO All done!
