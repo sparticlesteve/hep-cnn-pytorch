@@ -1,0 +1,101 @@
+*** WARNING: This is an experimental installation of pytorch built specifically for MPI / distributed running ***
+0: 2018-09-28 16:28:01,962 INFO Initializing
+3: 2018-09-28 16:28:02,003 INFO Initializing
+2: 2018-09-28 16:28:02,003 INFO Initializing
+1: 2018-09-28 16:28:02,049 INFO Initializing
+1: 2018-09-28 16:28:02,104 INFO MPI rank 1
+3: 2018-09-28 16:28:02,103 INFO MPI rank 3
+0: 2018-09-28 16:28:02,100 INFO MPI rank 0
+2: 2018-09-28 16:28:02,103 INFO MPI rank 2
+0: 2018-09-28 16:28:02,106 INFO Configuration: {'data_config': {'train_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/train.h5', 'valid_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/val.h5', 'test_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/test.h5', 'n_train': 262144, 'n_valid': 32768, 'n_test': 1024}, 'model_config': {'conv_sizes': [16, 32, 64], 'dense_sizes': [128], 'optimizer': 'Adam', 'learning_rate': 0.001, 'dropout': 0.2}, 'training_config': {'batch_size': 128, 'n_epochs': 4}, 'output_dir': '$SCRATCH/hep-cnn-pytorch'}
+3: 2018-09-28 16:29:52,521 INFO Loaded data with shape: torch.Size([262144, 1, 64, 64])
+2: 2018-09-28 16:29:52,521 INFO Loaded data with shape: torch.Size([262144, 1, 64, 64])
+1: 2018-09-28 16:29:52,522 INFO Loaded data with shape: torch.Size([262144, 1, 64, 64])
+0: 2018-09-28 16:29:52,518 INFO Loaded data with shape: torch.Size([262144, 1, 64, 64])
+1: 2018-09-28 16:29:52,544 INFO Epoch 0
+3: 2018-09-28 16:29:52,543 INFO Epoch 0
+2: 2018-09-28 16:29:52,543 INFO Epoch 0
+0: 2018-09-28 16:29:52,540 INFO Model: 
+0: HEPCNNClassifier(
+0:   (conv_net): Sequential(
+0:     (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+0:     (1): ReLU()
+0:     (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+0:     (3): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+0:     (4): ReLU()
+0:     (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+0:     (6): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+0:     (7): ReLU()
+0:     (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+0:   )
+0:   (dense_net): Sequential(
+0:     (0): Linear(in_features=4096, out_features=128, bias=True)
+0:     (1): ReLU()
+0:     (2): Dropout(p=0.2)
+0:     (3): Linear(in_features=128, out_features=1, bias=True)
+0:     (4): Sigmoid()
+0:   )
+0: )
+0: Parameters: 547841
+0: 2018-09-28 16:29:52,540 INFO Epoch 0
+0: 2018-09-28 16:31:03,317 INFO   Training loss: 0.277
+1: 2018-09-28 16:31:03,322 INFO   Training loss: 0.278
+3: 2018-09-28 16:31:03,320 INFO   Training loss: 0.277
+2: 2018-09-28 16:31:03,320 INFO   Training loss: 0.281
+0: 2018-09-28 16:31:13,856 INFO   Validation loss: 0.227 acc: 0.908
+0: 2018-09-28 16:31:13,863 INFO Epoch 1
+2: 2018-09-28 16:31:13,975 INFO   Validation loss: 0.227 acc: 0.908
+1: 2018-09-28 16:31:13,984 INFO   Validation loss: 0.227 acc: 0.908
+1: 2018-09-28 16:31:15,217 INFO Epoch 1
+2: 2018-09-28 16:31:15,245 INFO Epoch 1
+3: 2018-09-28 16:31:19,026 INFO   Validation loss: 0.227 acc: 0.908
+3: 2018-09-28 16:31:19,037 INFO Epoch 1
+3: 2018-09-28 16:32:35,290 INFO   Training loss: 0.232
+1: 2018-09-28 16:32:35,291 INFO   Training loss: 0.233
+0: 2018-09-28 16:32:35,287 INFO   Training loss: 0.230
+2: 2018-09-28 16:32:35,290 INFO   Training loss: 0.236
+0: 2018-09-28 16:32:45,919 INFO   Validation loss: 0.223 acc: 0.910
+2: 2018-09-28 16:32:45,930 INFO   Validation loss: 0.223 acc: 0.910
+1: 2018-09-28 16:32:45,967 INFO   Validation loss: 0.223 acc: 0.910
+0: 2018-09-28 16:32:46,105 INFO Epoch 2
+2: 2018-09-28 16:32:46,360 INFO Epoch 2
+1: 2018-09-28 16:32:46,412 INFO Epoch 2
+3: 2018-09-28 16:32:51,017 INFO   Validation loss: 0.223 acc: 0.910
+3: 2018-09-28 16:32:51,030 INFO Epoch 2
+0: 2018-09-28 16:34:07,480 INFO   Training loss: 0.181
+3: 2018-09-28 16:34:07,484 INFO   Training loss: 0.181
+1: 2018-09-28 16:34:07,485 INFO   Training loss: 0.182
+2: 2018-09-28 16:34:07,484 INFO   Training loss: 0.186
+1: 2018-09-28 16:34:18,392 INFO   Validation loss: 0.042 acc: 0.985
+2: 2018-09-28 16:34:18,396 INFO   Validation loss: 0.042 acc: 0.985
+1: 2018-09-28 16:34:18,399 INFO Epoch 3
+2: 2018-09-28 16:34:18,518 INFO Epoch 3
+0: 2018-09-28 16:34:23,376 INFO   Validation loss: 0.042 acc: 0.985
+3: 2018-09-28 16:34:23,499 INFO   Validation loss: 0.042 acc: 0.985
+0: 2018-09-28 16:34:23,746 INFO Epoch 3
+3: 2018-09-28 16:34:23,817 INFO Epoch 3
+0: 2018-09-28 16:35:42,189 INFO   Training loss: 0.047
+3: 2018-09-28 16:35:42,193 INFO   Training loss: 0.048
+1: 2018-09-28 16:35:42,194 INFO   Training loss: 0.046
+2: 2018-09-28 16:35:42,193 INFO   Training loss: 0.047
+2: 2018-09-28 16:35:52,975 INFO   Validation loss: 0.034 acc: 0.988
+1: 2018-09-28 16:35:52,999 INFO   Validation loss: 0.034 acc: 0.988
+2: 2018-09-28 16:35:53,573 INFO Finished training
+2: 2018-09-28 16:35:53,573 INFO Train samples 65536 time 78.9052s rate 830.566 samples/s
+2: 2018-09-28 16:35:53,573 INFO Valid rate: 3049.06 samples/s
+2: 2018-09-28 16:35:53,573 INFO All done!
+1: 2018-09-28 16:35:53,633 INFO Finished training
+1: 2018-09-28 16:35:53,634 INFO Train samples 65536 time 78.9296s rate 830.309 samples/s
+1: 2018-09-28 16:35:53,634 INFO Valid rate: 3044.69 samples/s
+1: 2018-09-28 16:35:53,634 INFO All done!
+0: 2018-09-28 16:35:58,055 INFO   Validation loss: 0.034 acc: 0.988
+3: 2018-09-28 16:35:58,144 INFO   Validation loss: 0.034 acc: 0.988
+0: 2018-09-28 16:35:58,331 INFO Saving summaries to /global/cscratch1/sd/sfarrell/hep-cnn-pytorch/summaries.npz
+0: 2018-09-28 16:35:58,350 INFO Finished training
+0: 2018-09-28 16:35:58,350 INFO Train samples 65536 time 78.005s rate 840.151 samples/s
+0: 2018-09-28 16:35:58,350 INFO Valid rate: 2476.31 samples/s
+0: 2018-09-28 16:35:58,350 INFO All done!
+3: 2018-09-28 16:35:58,463 INFO Finished training
+3: 2018-09-28 16:35:58,463 INFO Train samples 65536 time 75.4649s rate 868.431 samples/s
+3: 2018-09-28 16:35:58,463 INFO Valid rate: 2067.46 samples/s
+3: 2018-09-28 16:35:58,463 INFO All done!

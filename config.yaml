@@ -2,7 +2,7 @@ data_config:
     train_file: /global/cscratch1/sd/sfarrell/atlas-rpv-images/train.h5
     valid_file: /global/cscratch1/sd/sfarrell/atlas-rpv-images/val.h5
     test_file: /global/cscratch1/sd/sfarrell/atlas-rpv-images/test.h5
-    n_train: 65536 #412416
+    n_train: 262144 #412416
     n_valid: 32768
     n_test: 1024
 
@@ -15,6 +15,6 @@ model_config:
 
 training_config:
     batch_size: 128
-    n_epochs: 8
+    n_epochs: 4
 
 output_dir: $SCRATCH/hep-cnn-pytorch
