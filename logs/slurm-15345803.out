@@ -1,0 +1,441 @@
+*** WARNING: This is an experimental installation of pytorch built specifically for MPI / distributed running ***
+ 7: 2018-09-30 01:00:41,980 INFO Initializing
+19: 2018-09-30 01:00:41,981 INFO Initializing
+31: 2018-09-30 01:00:41,981 INFO Initializing
+14: 2018-09-30 01:00:41,982 INFO Initializing
+ 4: 2018-09-30 01:00:41,982 INFO Initializing
+17: 2018-09-30 01:00:41,983 INFO Initializing
+ 2: 2018-09-30 01:00:41,982 INFO Initializing
+ 5: 2018-09-30 01:00:41,981 INFO Initializing
+24: 2018-09-30 01:00:41,982 INFO Initializing
+30: 2018-09-30 01:00:41,983 INFO Initializing
+13: 2018-09-30 01:00:41,983 INFO Initializing
+21: 2018-09-30 01:00:41,983 INFO Initializing
+18: 2018-09-30 01:00:41,982 INFO Initializing
+10: 2018-09-30 01:00:41,982 INFO Initializing
+15: 2018-09-30 01:00:41,982 INFO Initializing
+22: 2018-09-30 01:00:41,984 INFO Initializing
+12: 2018-09-30 01:00:41,982 INFO Initializing
+ 6: 2018-09-30 01:00:41,984 INFO Initializing
+16: 2018-09-30 01:00:41,981 INFO Initializing
+11: 2018-09-30 01:00:41,983 INFO Initializing
+ 9: 2018-09-30 01:00:41,982 INFO Initializing
+ 3: 2018-09-30 01:00:41,983 INFO Initializing
+23: 2018-09-30 01:00:41,984 INFO Initializing
+ 8: 2018-09-30 01:00:41,997 INFO Initializing
+25: 2018-09-30 01:00:42,009 INFO Initializing
+20: 2018-09-30 01:00:42,027 INFO Initializing
+ 1: 2018-09-30 01:00:42,082 INFO Initializing
+27: 2018-09-30 01:00:42,088 INFO Initializing
+29: 2018-09-30 01:00:42,092 INFO Initializing
+28: 2018-09-30 01:00:46,186 INFO Initializing
+ 0: 2018-09-30 01:00:46,202 INFO Initializing
+26: 2018-09-30 01:00:48,810 INFO Initializing
+ 4: 2018-09-30 01:00:48,860 INFO MPI rank 4
+ 2: 2018-09-30 01:00:48,860 INFO MPI rank 2
+ 5: 2018-09-30 01:00:48,859 INFO MPI rank 5
+ 1: 2018-09-30 01:00:48,861 INFO MPI rank 1
+ 3: 2018-09-30 01:00:48,860 INFO MPI rank 3
+10: 2018-09-30 01:00:48,859 INFO MPI rank 10
+ 6: 2018-09-30 01:00:48,861 INFO MPI rank 6
+ 8: 2018-09-30 01:00:48,858 INFO MPI rank 8
+ 9: 2018-09-30 01:00:48,859 INFO MPI rank 9
+ 7: 2018-09-30 01:00:48,859 INFO MPI rank 7
+20: 2018-09-30 01:00:48,859 INFO MPI rank 20
+13: 2018-09-30 01:00:48,861 INFO MPI rank 13
+15: 2018-09-30 01:00:48,859 INFO MPI rank 15
+14: 2018-09-30 01:00:48,860 INFO MPI rank 14
+12: 2018-09-30 01:00:48,860 INFO MPI rank 12
+16: 2018-09-30 01:00:48,858 INFO MPI rank 16
+11: 2018-09-30 01:00:48,860 INFO MPI rank 11
+23: 2018-09-30 01:00:48,861 INFO MPI rank 23
+24: 2018-09-30 01:00:48,860 INFO MPI rank 24
+29: 2018-09-30 01:00:48,862 INFO MPI rank 29
+27: 2018-09-30 01:00:48,860 INFO MPI rank 27
+28: 2018-09-30 01:00:48,859 INFO MPI rank 28
+30: 2018-09-30 01:00:48,860 INFO MPI rank 30
+21: 2018-09-30 01:00:48,860 INFO MPI rank 21
+19: 2018-09-30 01:00:48,859 INFO MPI rank 19
+25: 2018-09-30 01:00:48,860 INFO MPI rank 25
+18: 2018-09-30 01:00:48,860 INFO MPI rank 18
+22: 2018-09-30 01:00:48,861 INFO MPI rank 22
+17: 2018-09-30 01:00:48,861 INFO MPI rank 17
+ 0: 2018-09-30 01:00:48,860 INFO MPI rank 0
+26: 2018-09-30 01:00:48,860 INFO MPI rank 26
+31: 2018-09-30 01:00:48,860 INFO MPI rank 31
+ 0: 2018-09-30 01:00:48,874 INFO Configuration: {'data_config': {'train_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/train.h5', 'valid_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/val.h5', 'test_file': '/global/cscratch1/sd/sfarrell/atlas-rpv-images/test.h5', 'n_train': 409600, 'n_valid': 32768, 'n_test': 1024}, 'model_config': {'conv_sizes': [16, 32, 64], 'dense_sizes': [128], 'optimizer': 'Adam', 'learning_rate': 0.001, 'dropout': 0.2}, 'training_config': {'batch_size': 128, 'n_epochs': 2}, 'output_dir': '$SCRATCH/hep-cnn-pytorch'}
+14: 2018-09-30 01:05:11,664 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+10: 2018-09-30 01:05:11,672 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 1: 2018-09-30 01:05:11,704 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 5: 2018-09-30 01:05:11,765 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+22: 2018-09-30 01:05:11,793 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+25: 2018-09-30 01:05:11,842 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 0: 2018-09-30 01:05:11,845 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+20: 2018-09-30 01:05:11,904 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+27: 2018-09-30 01:05:11,912 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+13: 2018-09-30 01:05:11,917 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+16: 2018-09-30 01:05:11,953 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+11: 2018-09-30 01:05:11,955 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+12: 2018-09-30 01:05:12,021 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+26: 2018-09-30 01:05:12,042 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+15: 2018-09-30 01:05:12,054 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+30: 2018-09-30 01:05:12,061 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+28: 2018-09-30 01:05:12,068 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 2: 2018-09-30 01:05:12,158 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+17: 2018-09-30 01:05:12,194 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 8: 2018-09-30 01:05:12,220 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 3: 2018-09-30 01:05:12,403 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+23: 2018-09-30 01:05:12,889 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 4: 2018-09-30 01:05:12,893 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+24: 2018-09-30 01:05:12,906 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+19: 2018-09-30 01:05:12,940 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 7: 2018-09-30 01:05:13,134 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 6: 2018-09-30 01:05:13,140 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+31: 2018-09-30 01:05:13,175 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 9: 2018-09-30 01:05:13,175 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+18: 2018-09-30 01:05:13,273 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+29: 2018-09-30 01:05:13,348 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+21: 2018-09-30 01:05:15,066 INFO Loaded data with shape: torch.Size([409600, 1, 64, 64])
+ 5: 2018-09-30 01:05:15,114 INFO Epoch 0
+ 4: 2018-09-30 01:05:15,116 INFO Epoch 0
+ 6: 2018-09-30 01:05:15,117 INFO Epoch 0
+ 3: 2018-09-30 01:05:15,116 INFO Epoch 0
+ 7: 2018-09-30 01:05:15,115 INFO Epoch 0
+ 2: 2018-09-30 01:05:15,116 INFO Epoch 0
+ 1: 2018-09-30 01:05:15,117 INFO Epoch 0
+ 0: 2018-09-30 01:05:15,116 INFO Model: 
+ 0: HEPCNNClassifier(
+ 0:   (conv_net): Sequential(
+ 0:     (0): Conv2d(1, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+ 0:     (1): ReLU()
+ 0:     (2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+ 0:     (3): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+ 0:     (4): ReLU()
+ 0:     (5): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+ 0:     (6): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+ 0:     (7): ReLU()
+ 0:     (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+ 0:   )
+ 0:   (dense_net): Sequential(
+ 0:     (0): Linear(in_features=4096, out_features=128, bias=True)
+ 0:     (1): ReLU()
+ 0:     (2): Dropout(p=0.2)
+ 0:     (3): Linear(in_features=128, out_features=1, bias=True)
+ 0:     (4): Sigmoid()
+ 0:   )
+ 0: )
+ 0: Parameters: 547841
+ 0: 2018-09-30 01:05:15,117 INFO Epoch 0
+19: 2018-09-30 01:05:15,117 INFO Epoch 0
+18: 2018-09-30 01:05:15,118 INFO Epoch 0
+17: 2018-09-30 01:05:15,119 INFO Epoch 0
+16: 2018-09-30 01:05:15,116 INFO Epoch 0
+10: 2018-09-30 01:05:15,123 INFO Epoch 0
+11: 2018-09-30 01:05:15,123 INFO Epoch 0
+ 9: 2018-09-30 01:05:15,123 INFO Epoch 0
+ 8: 2018-09-30 01:05:15,122 INFO Epoch 0
+12: 2018-09-30 01:05:15,126 INFO Epoch 0
+13: 2018-09-30 01:05:15,126 INFO Epoch 0
+20: 2018-09-30 01:05:15,125 INFO Epoch 0
+21: 2018-09-30 01:05:15,126 INFO Epoch 0
+27: 2018-09-30 01:05:15,131 INFO Epoch 0
+26: 2018-09-30 01:05:15,131 INFO Epoch 0
+25: 2018-09-30 01:05:15,131 INFO Epoch 0
+24: 2018-09-30 01:05:15,131 INFO Epoch 0
+14: 2018-09-30 01:05:15,132 INFO Epoch 0
+15: 2018-09-30 01:05:15,131 INFO Epoch 0
+29: 2018-09-30 01:05:15,134 INFO Epoch 0
+28: 2018-09-30 01:05:15,131 INFO Epoch 0
+22: 2018-09-30 01:05:15,134 INFO Epoch 0
+23: 2018-09-30 01:05:15,133 INFO Epoch 0
+30: 2018-09-30 01:05:15,138 INFO Epoch 0
+31: 2018-09-30 01:05:15,138 INFO Epoch 0
+10: 2018-09-30 01:05:39,597 INFO   Training loss: 11.744
+22: 2018-09-30 01:05:39,600 INFO   Training loss: 11.504
+16: 2018-09-30 01:05:39,596 INFO   Training loss: 11.562
+ 3: 2018-09-30 01:05:39,598 INFO   Training loss: 11.940
+18: 2018-09-30 01:05:39,597 INFO   Training loss: 11.597
+29: 2018-09-30 01:05:39,600 INFO   Training loss: 11.735
+27: 2018-09-30 01:05:39,598 INFO   Training loss: 11.614
+31: 2018-09-30 01:05:39,598 INFO   Training loss: 11.819
+11: 2018-09-30 01:05:39,598 INFO   Training loss: 11.653
+26: 2018-09-30 01:05:39,599 INFO   Training loss: 11.551
+ 0: 2018-09-30 01:05:39,599 INFO   Training loss: 11.621
+25: 2018-09-30 01:05:39,599 INFO   Training loss: 11.828
+14: 2018-09-30 01:05:39,598 INFO   Training loss: 11.690
+ 4: 2018-09-30 01:05:39,599 INFO   Training loss: 11.698
+28: 2018-09-30 01:05:39,598 INFO   Training loss: 11.640
+12: 2018-09-30 01:05:39,599 INFO   Training loss: 11.582
+ 9: 2018-09-30 01:05:39,598 INFO   Training loss: 11.664
+ 7: 2018-09-30 01:05:39,597 INFO   Training loss: 11.757
+17: 2018-09-30 01:05:39,600 INFO   Training loss: 11.603
+24: 2018-09-30 01:05:39,599 INFO   Training loss: 11.640
+30: 2018-09-30 01:05:39,599 INFO   Training loss: 11.681
+21: 2018-09-30 01:05:39,599 INFO   Training loss: 11.670
+ 1: 2018-09-30 01:05:39,600 INFO   Training loss: 11.685
+23: 2018-09-30 01:05:39,600 INFO   Training loss: 11.610
+19: 2018-09-30 01:05:39,598 INFO   Training loss: 11.521
+ 2: 2018-09-30 01:05:39,599 INFO   Training loss: 11.614
+ 6: 2018-09-30 01:05:39,600 INFO   Training loss: 11.819
+20: 2018-09-30 01:05:39,599 INFO   Training loss: 11.597
+13: 2018-09-30 01:05:39,600 INFO   Training loss: 11.597
+15: 2018-09-30 01:05:39,598 INFO   Training loss: 11.687
+ 8: 2018-09-30 01:05:39,598 INFO   Training loss: 11.608
+ 5: 2018-09-30 01:05:39,599 INFO   Training loss: 11.847
+15: 2018-09-30 01:06:03,538 INFO   Validation loss: 11.783 acc: 0.574
+15: 2018-09-30 01:06:03,554 INFO Epoch 1
+18: 2018-09-30 01:06:03,702 INFO   Validation loss: 11.783 acc: 0.574
+ 2: 2018-09-30 01:06:03,724 INFO   Validation loss: 11.783 acc: 0.574
+28: 2018-09-30 01:06:03,760 INFO   Validation loss: 11.783 acc: 0.574
+17: 2018-09-30 01:06:03,812 INFO   Validation loss: 11.783 acc: 0.574
+12: 2018-09-30 01:06:03,818 INFO   Validation loss: 11.783 acc: 0.574
+14: 2018-09-30 01:06:03,837 INFO   Validation loss: 11.783 acc: 0.574
+13: 2018-09-30 01:06:03,982 INFO   Validation loss: 11.783 acc: 0.574
+21: 2018-09-30 01:06:03,994 INFO   Validation loss: 11.783 acc: 0.574
+27: 2018-09-30 01:06:04,054 INFO   Validation loss: 11.783 acc: 0.574
+ 0: 2018-09-30 01:06:04,197 INFO   Validation loss: 11.783 acc: 0.574
+ 1: 2018-09-30 01:06:04,261 INFO   Validation loss: 11.783 acc: 0.574
+11: 2018-09-30 01:06:04,313 INFO   Validation loss: 11.783 acc: 0.574
+ 9: 2018-09-30 01:06:04,372 INFO   Validation loss: 11.783 acc: 0.574
+10: 2018-09-30 01:06:04,403 INFO   Validation loss: 11.783 acc: 0.574
+30: 2018-09-30 01:06:04,489 INFO   Validation loss: 11.783 acc: 0.574
+16: 2018-09-30 01:06:04,498 INFO   Validation loss: 11.783 acc: 0.574
+ 6: 2018-09-30 01:06:04,554 INFO   Validation loss: 11.783 acc: 0.574
+ 3: 2018-09-30 01:06:04,613 INFO   Validation loss: 11.783 acc: 0.574
+24: 2018-09-30 01:06:04,615 INFO   Validation loss: 11.783 acc: 0.574
+22: 2018-09-30 01:06:04,787 INFO   Validation loss: 11.783 acc: 0.574
+ 4: 2018-09-30 01:06:04,828 INFO   Validation loss: 11.783 acc: 0.574
+31: 2018-09-30 01:06:04,831 INFO   Validation loss: 11.783 acc: 0.574
+ 7: 2018-09-30 01:06:04,863 INFO   Validation loss: 11.783 acc: 0.574
+19: 2018-09-30 01:06:04,863 INFO   Validation loss: 11.783 acc: 0.574
+25: 2018-09-30 01:06:04,890 INFO   Validation loss: 11.783 acc: 0.574
+26: 2018-09-30 01:06:04,896 INFO   Validation loss: 11.783 acc: 0.574
+ 5: 2018-09-30 01:06:04,905 INFO   Validation loss: 11.783 acc: 0.574
+23: 2018-09-30 01:06:08,968 INFO   Validation loss: 11.783 acc: 0.574
+18: 2018-09-30 01:06:11,422 INFO Epoch 1
+ 2: 2018-09-30 01:06:11,780 INFO Epoch 1
+28: 2018-09-30 01:06:11,975 INFO Epoch 1
+17: 2018-09-30 01:06:12,443 INFO Epoch 1
+29: 2018-09-30 01:06:12,522 INFO   Validation loss: 11.783 acc: 0.574
+20: 2018-09-30 01:06:12,528 INFO   Validation loss: 11.783 acc: 0.574
+12: 2018-09-30 01:06:12,658 INFO Epoch 1
+ 8: 2018-09-30 01:06:12,705 INFO   Validation loss: 11.783 acc: 0.574
+14: 2018-09-30 01:06:12,825 INFO Epoch 1
+19: 2018-09-30 01:06:12,894 INFO Epoch 1
+13: 2018-09-30 01:06:13,749 INFO Epoch 1
+21: 2018-09-30 01:06:13,814 INFO Epoch 1
+27: 2018-09-30 01:06:13,989 INFO Epoch 1
+ 0: 2018-09-30 01:06:14,258 INFO Epoch 1
+ 1: 2018-09-30 01:06:14,449 INFO Epoch 1
+11: 2018-09-30 01:06:14,635 INFO Epoch 1
+30: 2018-09-30 01:06:14,731 INFO Epoch 1
+ 9: 2018-09-30 01:06:14,762 INFO Epoch 1
+10: 2018-09-30 01:06:14,821 INFO Epoch 1
+16: 2018-09-30 01:06:14,871 INFO Epoch 1
+ 6: 2018-09-30 01:06:14,953 INFO Epoch 1
+24: 2018-09-30 01:06:15,078 INFO Epoch 1
+ 3: 2018-09-30 01:06:15,115 INFO Epoch 1
+ 4: 2018-09-30 01:06:15,135 INFO Epoch 1
+31: 2018-09-30 01:06:15,167 INFO Epoch 1
+22: 2018-09-30 01:06:15,195 INFO Epoch 1
+ 7: 2018-09-30 01:06:15,214 INFO Epoch 1
+25: 2018-09-30 01:06:15,244 INFO Epoch 1
+ 5: 2018-09-30 01:06:15,258 INFO Epoch 1
+26: 2018-09-30 01:06:15,319 INFO Epoch 1
+23: 2018-09-30 01:06:15,342 INFO Epoch 1
+20: 2018-09-30 01:06:15,926 INFO Epoch 1
+29: 2018-09-30 01:06:16,242 INFO Epoch 1
+ 8: 2018-09-30 01:06:16,259 INFO Epoch 1
+28: 2018-09-30 01:06:40,028 INFO   Training loss: 11.747
+25: 2018-09-30 01:06:40,029 INFO   Training loss: 11.920
+18: 2018-09-30 01:06:40,028 INFO   Training loss: 11.711
+10: 2018-09-30 01:06:40,028 INFO   Training loss: 11.858
+14: 2018-09-30 01:06:40,029 INFO   Training loss: 11.795
+11: 2018-09-30 01:06:40,029 INFO   Training loss: 11.763
+ 0: 2018-09-30 01:06:40,029 INFO   Training loss: 11.726
+ 6: 2018-09-30 01:06:40,030 INFO   Training loss: 11.950
+17: 2018-09-30 01:06:40,030 INFO   Training loss: 11.724
+ 2: 2018-09-30 01:06:40,029 INFO   Training loss: 11.728
+29: 2018-09-30 01:06:40,031 INFO   Training loss: 11.838
+27: 2018-09-30 01:06:40,029 INFO   Training loss: 11.696
+ 3: 2018-09-30 01:06:40,029 INFO   Training loss: 12.058
+21: 2018-09-30 01:06:40,029 INFO   Training loss: 11.791
+12: 2018-09-30 01:06:40,029 INFO   Training loss: 11.689
+ 7: 2018-09-30 01:06:40,028 INFO   Training loss: 11.866
+23: 2018-09-30 01:06:40,031 INFO   Training loss: 11.711
+13: 2018-09-30 01:06:40,030 INFO   Training loss: 11.717
+ 9: 2018-09-30 01:06:40,029 INFO   Training loss: 11.786
+24: 2018-09-30 01:06:40,030 INFO   Training loss: 11.743
+30: 2018-09-30 01:06:40,030 INFO   Training loss: 11.806
+15: 2018-09-30 01:06:40,029 INFO   Training loss: 11.786
+22: 2018-09-30 01:06:40,031 INFO   Training loss: 11.618
+ 5: 2018-09-30 01:06:40,029 INFO   Training loss: 11.957
+20: 2018-09-30 01:06:40,029 INFO   Training loss: 11.685
+26: 2018-09-30 01:06:40,030 INFO   Training loss: 11.668
+19: 2018-09-30 01:06:40,029 INFO   Training loss: 11.642
+31: 2018-09-30 01:06:40,029 INFO   Training loss: 11.931
+ 8: 2018-09-30 01:06:40,028 INFO   Training loss: 11.722
+ 4: 2018-09-30 01:06:40,030 INFO   Training loss: 11.812
+ 1: 2018-09-30 01:06:40,031 INFO   Training loss: 11.808
+16: 2018-09-30 01:06:40,028 INFO   Training loss: 11.668
+ 2: 2018-09-30 01:07:03,961 INFO   Validation loss: 11.783 acc: 0.574
+ 2: 2018-09-30 01:07:03,977 INFO Finished training
+ 2: 2018-09-30 01:07:03,977 INFO Train samples 12800 time 26.3656s rate 485.481 samples/s
+ 2: 2018-09-30 01:07:03,977 INFO Valid rate: 1363.73 samples/s
+ 2: 2018-09-30 01:07:03,977 INFO All done!
+28: 2018-09-30 01:07:04,259 INFO   Validation loss: 11.783 acc: 0.574
+28: 2018-09-30 01:07:04,347 INFO Finished training
+28: 2018-09-30 01:07:04,348 INFO Train samples 12800 time 26.2596s rate 487.44 samples/s
+28: 2018-09-30 01:07:04,348 INFO Valid rate: 1354.26 samples/s
+28: 2018-09-30 01:07:04,348 INFO All done!
+ 6: 2018-09-30 01:07:04,385 INFO   Validation loss: 11.783 acc: 0.574
+21: 2018-09-30 01:07:04,414 INFO   Validation loss: 11.783 acc: 0.574
+14: 2018-09-30 01:07:04,437 INFO   Validation loss: 11.783 acc: 0.574
+13: 2018-09-30 01:07:04,442 INFO   Validation loss: 11.783 acc: 0.574
+27: 2018-09-30 01:07:04,494 INFO   Validation loss: 11.783 acc: 0.574
+15: 2018-09-30 01:07:04,526 INFO   Validation loss: 11.783 acc: 0.574
+ 1: 2018-09-30 01:07:04,601 INFO   Validation loss: 11.783 acc: 0.574
+11: 2018-09-30 01:07:04,648 INFO   Validation loss: 11.783 acc: 0.574
+30: 2018-09-30 01:07:04,697 INFO   Validation loss: 11.783 acc: 0.574
+23: 2018-09-30 01:07:04,764 INFO   Validation loss: 11.783 acc: 0.574
+17: 2018-09-30 01:07:04,981 INFO   Validation loss: 11.783 acc: 0.574
+18: 2018-09-30 01:07:04,999 INFO   Validation loss: 11.783 acc: 0.574
+24: 2018-09-30 01:07:05,000 INFO   Validation loss: 11.783 acc: 0.574
+ 7: 2018-09-30 01:07:05,008 INFO   Validation loss: 11.783 acc: 0.574
+ 4: 2018-09-30 01:07:05,014 INFO   Validation loss: 11.783 acc: 0.574
+ 3: 2018-09-30 01:07:05,014 INFO   Validation loss: 11.783 acc: 0.574
+22: 2018-09-30 01:07:05,075 INFO   Validation loss: 11.783 acc: 0.574
+10: 2018-09-30 01:07:05,075 INFO   Validation loss: 11.783 acc: 0.574
+25: 2018-09-30 01:07:05,084 INFO   Validation loss: 11.783 acc: 0.574
+ 5: 2018-09-30 01:07:05,094 INFO   Validation loss: 11.783 acc: 0.574
+19: 2018-09-30 01:07:05,101 INFO   Validation loss: 11.783 acc: 0.574
+16: 2018-09-30 01:07:05,100 INFO   Validation loss: 11.783 acc: 0.574
+31: 2018-09-30 01:07:05,103 INFO   Validation loss: 11.783 acc: 0.574
+ 9: 2018-09-30 01:07:05,116 INFO   Validation loss: 11.783 acc: 0.574
+26: 2018-09-30 01:07:05,120 INFO   Validation loss: 11.783 acc: 0.574
+12: 2018-09-30 01:07:05,139 INFO   Validation loss: 11.783 acc: 0.574
+ 0: 2018-09-30 01:07:05,171 INFO   Validation loss: 11.783 acc: 0.574
+20: 2018-09-30 01:07:09,377 INFO   Validation loss: 11.783 acc: 0.574
+ 8: 2018-09-30 01:07:09,395 INFO   Validation loss: 11.783 acc: 0.574
+29: 2018-09-30 01:07:10,112 INFO   Validation loss: 11.783 acc: 0.574
+19: 2018-09-30 01:07:12,395 INFO Finished training
+19: 2018-09-30 01:07:12,395 INFO Train samples 12800 time 25.8077s rate 495.977 samples/s
+19: 2018-09-30 01:07:12,395 INFO Valid rate: 1301.96 samples/s
+19: 2018-09-30 01:07:12,395 INFO All done!
+ 6: 2018-09-30 01:07:12,707 INFO Finished training
+ 6: 2018-09-30 01:07:12,707 INFO Train samples 12800 time 24.78s rate 516.546 samples/s
+ 6: 2018-09-30 01:07:12,707 INFO Valid rate: 1329.1 samples/s
+ 6: 2018-09-30 01:07:12,707 INFO All done!
+21: 2018-09-30 01:07:12,950 INFO Finished training
+21: 2018-09-30 01:07:12,950 INFO Train samples 12800 time 25.344s rate 505.051 samples/s
+21: 2018-09-30 01:07:12,950 INFO Valid rate: 1343.54 samples/s
+21: 2018-09-30 01:07:12,950 INFO All done!
+14: 2018-09-30 01:07:13,027 INFO Finished training
+14: 2018-09-30 01:07:13,027 INFO Train samples 12800 time 25.8351s rate 495.45 samples/s
+14: 2018-09-30 01:07:13,027 INFO Valid rate: 1347.2 samples/s
+14: 2018-09-30 01:07:13,027 INFO All done!
+13: 2018-09-30 01:07:13,077 INFO Finished training
+13: 2018-09-30 01:07:13,077 INFO Train samples 12800 time 25.3774s rate 504.387 samples/s
+13: 2018-09-30 01:07:13,077 INFO Valid rate: 1343.12 samples/s
+13: 2018-09-30 01:07:13,077 INFO All done!
+27: 2018-09-30 01:07:13,317 INFO Finished training
+27: 2018-09-30 01:07:13,317 INFO Train samples 12800 time 25.2537s rate 506.856 samples/s
+27: 2018-09-30 01:07:13,317 INFO Valid rate: 1339.63 samples/s
+27: 2018-09-30 01:07:13,317 INFO All done!
+15: 2018-09-30 01:07:13,867 INFO Finished training
+15: 2018-09-30 01:07:13,867 INFO Train samples 12800 time 30.4708s rate 420.075 samples/s
+15: 2018-09-30 01:07:13,867 INFO Valid rate: 1353.03 samples/s
+15: 2018-09-30 01:07:13,867 INFO All done!
+ 1: 2018-09-30 01:07:14,168 INFO Finished training
+ 1: 2018-09-30 01:07:14,168 INFO Train samples 12800 time 25.0321s rate 511.343 samples/s
+ 1: 2018-09-30 01:07:14,168 INFO Valid rate: 1331.22 samples/s
+ 1: 2018-09-30 01:07:14,168 INFO All done!
+11: 2018-09-30 01:07:14,409 INFO Finished training
+11: 2018-09-30 01:07:14,409 INFO Train samples 12800 time 24.9344s rate 513.347 samples/s
+11: 2018-09-30 01:07:14,409 INFO Valid rate: 1328.42 samples/s
+11: 2018-09-30 01:07:14,409 INFO All done!
+30: 2018-09-30 01:07:14,448 INFO Finished training
+30: 2018-09-30 01:07:14,449 INFO Train samples 12800 time 24.8792s rate 514.486 samples/s
+30: 2018-09-30 01:07:14,449 INFO Valid rate: 1322.44 samples/s
+30: 2018-09-30 01:07:14,449 INFO All done!
+23: 2018-09-30 01:07:14,518 INFO Finished training
+23: 2018-09-30 01:07:14,518 INFO Train samples 12800 time 24.5775s rate 520.802 samples/s
+23: 2018-09-30 01:07:14,518 INFO Valid rate: 1211.38 samples/s
+23: 2018-09-30 01:07:14,518 INFO All done!
+ 7: 2018-09-30 01:07:14,706 INFO Finished training
+ 7: 2018-09-30 01:07:14,706 INFO Train samples 12800 time 24.648s rate 519.311 samples/s
+ 7: 2018-09-30 01:07:14,706 INFO Valid rate: 1304.33 samples/s
+ 7: 2018-09-30 01:07:14,706 INFO All done!
+17: 2018-09-30 01:07:14,728 INFO Finished training
+17: 2018-09-30 01:07:14,728 INFO Train samples 12800 time 26.0337s rate 491.67 samples/s
+17: 2018-09-30 01:07:14,728 INFO Valid rate: 1333.05 samples/s
+17: 2018-09-30 01:07:14,728 INFO All done!
+18: 2018-09-30 01:07:14,760 INFO Finished training
+18: 2018-09-30 01:07:14,760 INFO Train samples 12800 time 26.5431s rate 482.235 samples/s
+18: 2018-09-30 01:07:14,760 INFO Valid rate: 1335.43 samples/s
+18: 2018-09-30 01:07:14,760 INFO All done!
+ 4: 2018-09-30 01:07:14,779 INFO Finished training
+ 4: 2018-09-30 01:07:14,779 INFO Train samples 12800 time 24.6885s rate 518.46 samples/s
+ 4: 2018-09-30 01:07:14,779 INFO Valid rate: 1305.19 samples/s
+ 4: 2018-09-30 01:07:14,780 INFO All done!
+24: 2018-09-30 01:07:14,813 INFO Finished training
+24: 2018-09-30 01:07:14,814 INFO Train samples 12800 time 24.7095s rate 518.02 samples/s
+24: 2018-09-30 01:07:14,814 INFO Valid rate: 1311.13 samples/s
+24: 2018-09-30 01:07:14,814 INFO All done!
+ 3: 2018-09-30 01:07:14,832 INFO Finished training
+ 3: 2018-09-30 01:07:14,832 INFO Train samples 12800 time 24.6981s rate 518.259 samples/s
+ 3: 2018-09-30 01:07:14,832 INFO Valid rate: 1310.74 samples/s
+ 3: 2018-09-30 01:07:14,832 INFO All done!
+25: 2018-09-30 01:07:14,856 INFO Finished training
+25: 2018-09-30 01:07:14,856 INFO Train samples 12800 time 24.6263s rate 519.77 samples/s
+25: 2018-09-30 01:07:14,856 INFO Valid rate: 1301.73 samples/s
+25: 2018-09-30 01:07:14,856 INFO All done!
+ 5: 2018-09-30 01:07:14,884 INFO Finished training
+ 5: 2018-09-30 01:07:14,884 INFO Train samples 12800 time 24.6273s rate 519.749 samples/s
+ 5: 2018-09-30 01:07:14,884 INFO Valid rate: 1301.07 samples/s
+ 5: 2018-09-30 01:07:14,884 INFO All done!
+22: 2018-09-30 01:07:14,922 INFO Finished training
+22: 2018-09-30 01:07:14,922 INFO Train samples 12800 time 24.6511s rate 519.247 samples/s
+22: 2018-09-30 01:07:14,922 INFO Valid rate: 1304.7 samples/s
+22: 2018-09-30 01:07:14,922 INFO All done!
+16: 2018-09-30 01:07:14,946 INFO Finished training
+16: 2018-09-30 01:07:14,946 INFO Train samples 12800 time 24.8187s rate 515.74 samples/s
+16: 2018-09-30 01:07:14,947 INFO Valid rate: 1311.44 samples/s
+16: 2018-09-30 01:07:14,947 INFO All done!
+10: 2018-09-30 01:07:14,977 INFO Finished training
+10: 2018-09-30 01:07:14,977 INFO Train samples 12800 time 24.841s rate 515.278 samples/s
+10: 2018-09-30 01:07:14,977 INFO Valid rate: 1314.62 samples/s
+10: 2018-09-30 01:07:14,977 INFO All done!
+31: 2018-09-30 01:07:15,005 INFO Finished training
+31: 2018-09-30 01:07:15,005 INFO Train samples 12800 time 24.661s rate 519.039 samples/s
+31: 2018-09-30 01:07:15,005 INFO Valid rate: 1302.74 samples/s
+31: 2018-09-30 01:07:15,005 INFO All done!
+ 9: 2018-09-30 01:07:15,044 INFO Finished training
+ 9: 2018-09-30 01:07:15,044 INFO Train samples 12800 time 24.8708s rate 514.661 samples/s
+ 9: 2018-09-30 01:07:15,044 INFO Valid rate: 1314.39 samples/s
+ 9: 2018-09-30 01:07:15,044 INFO All done!
+ 0: 2018-09-30 01:07:15,071 INFO Saving summaries to /global/cscratch1/sd/sfarrell/hep-cnn-pytorch/summaries.npz
+ 0: 2018-09-30 01:07:15,095 INFO Finished training
+ 0: 2018-09-30 01:07:15,095 INFO Train samples 12800 time 25.1263s rate 509.426 samples/s
+ 0: 2018-09-30 01:07:15,095 INFO Valid rate: 1317.58 samples/s
+ 0: 2018-09-30 01:07:15,095 INFO All done!
+26: 2018-09-30 01:07:15,100 INFO Finished training
+26: 2018-09-30 01:07:15,100 INFO Train samples 12800 time 24.5889s rate 520.56 samples/s
+26: 2018-09-30 01:07:15,100 INFO Valid rate: 1300.66 samples/s
+26: 2018-09-30 01:07:15,100 INFO All done!
+12: 2018-09-30 01:07:15,124 INFO Finished training
+12: 2018-09-30 01:07:15,124 INFO Train samples 12800 time 25.9218s rate 493.793 samples/s
+12: 2018-09-30 01:07:15,125 INFO Valid rate: 1328.55 samples/s
+12: 2018-09-30 01:07:15,125 INFO All done!
+20: 2018-09-30 01:07:15,365 INFO Finished training
+20: 2018-09-30 01:07:15,365 INFO Train samples 12800 time 24.2881s rate 527.007 samples/s
+20: 2018-09-30 01:07:15,365 INFO Valid rate: 1052.35 samples/s
+20: 2018-09-30 01:07:15,365 INFO All done!
+ 8: 2018-09-30 01:07:15,589 INFO Finished training
+ 8: 2018-09-30 01:07:15,589 INFO Train samples 12800 time 24.122s rate 530.636 samples/s
+ 8: 2018-09-30 01:07:15,589 INFO Valid rate: 1049.01 samples/s
+ 8: 2018-09-30 01:07:15,589 INFO All done!
+29: 2018-09-30 01:07:15,629 INFO Finished training
+29: 2018-09-30 01:07:15,629 INFO Train samples 12800 time 24.1274s rate 530.518 samples/s
+29: 2018-09-30 01:07:15,629 INFO Valid rate: 1040.22 samples/s
+29: 2018-09-30 01:07:15,630 INFO All done!
